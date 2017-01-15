@@ -1,0 +1,66 @@
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+
+body {
+  background-color: #1E2229;
+}
+
+h1, h2 {
+  color: #586073;
+}
+
+h1 {
+  font-family: 'Pacifico', sans-serif;
+  text-align: center;
+  font-size: 75px;
+  padding: 50px;
+}
+
+.btn-group {
+  width: 100%;
+}
+
+.palette-btn {
+  height: 75px;
+  width: 20%;
+  color: transparent;
+}
+
+.palette-btn:hover {
+  color: inherit;
+}
+
+.link-to-new {
+  margin: 75px;
+  font-size: 25px;
+}
+
+input[type="text"]{
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.color-picker {
+  margin-top: 50px;
+}
+
+.color-letter {
+  display: inline-block;
+  font-size: 25px;
+  color: white;
+  width: 5%
+}
+
+.color-number {
+  width: 10%;
+}
+
+input[type="range"]{
+  width: 80%;
+  display: inline-block;
+  margin-left: 20px;
+}
