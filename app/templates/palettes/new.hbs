@@ -1,15 +1,16 @@
-<h1> New Palette </h1>
+<h1> {{model.name}} </h1>
 
 <h2> Palette Name </h2>
-<input type="text" class="full-width">
+{{input value=model.name class="full-width"}}
+
 
 <h2> Palette Preview </h2>
 <div class="btn-group">
-    <button class="btn palette-btn" style="background-color: rgb(217,33,32)"> rgb(217,33,32)</button>
-    <button class="btn palette-btn" style="background-color: rgb(231,116,47)"> rgb(231,116,47)</button>
-    <button class="btn palette-btn" style="background-color: rgb(223,165,58)"> rgb(223,165,58) </button>
-    <button class="btn palette-btn" style="background-color: rgb(177,190,78)"> rgb(177,190,78) </button>
-    <button class="btn palette-btn" style="background-color: rgb(109,179,136)"> rgb(109,179,136) </button>
+  {{#each model.colors as |color|}}
+<button class="btn palette-btn" style="background-color: rgb({{color.red}},{{color.green}},{{color.blue}})">
+  rgb({{color.red}}, {{color.green}}, {{color.blue}})
+</button>
+{{/each}}
 </div>
 
 <h2> Edit Color </h2>
