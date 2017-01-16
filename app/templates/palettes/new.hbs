@@ -7,32 +7,32 @@
 <h2> Palette Preview </h2>
 <div class="btn-group">
   {{#each model.colors as |color|}}
-<button class="btn palette-btn" style="background-color: rgb({{color.red}},{{color.green}},{{color.blue}})">
-  rgb({{color.red}}, {{color.green}}, {{color.blue}})
-</button>
+    <button {{action 'setFocusColor' color}} class="btn palette-btn" style="background-color: rgb({{color.red}},{{color.green}},{{color.blue}})">
+      rgb({{color.red}}, {{color.green}}, {{color.blue}})
+    </button>
 {{/each}}
 </div>
 
 <h2> Edit Color </h2>
 <div class="btn-group">
-  <button class="btn palette-btn full-width"></button>
+  <button class="btn palette-btn full-width" style="background-color: rgb({{focusColor.red}}, {{focusColor.green}}, {{focusColor.blue}})"></button>
 </div>
 
 <div class="color-picker">
   <div class="color-letter">R</div>
-  <input type="text" class="color-number">
-  <input type="range" class="color-slider" maxlength="3">
+  {{input type="text" class="color-number" maxlength="3" value=focusColor.red}}
+  {{input type="range" class="color-slider"  min="0" max="255" step="1" value=focusColor.red}}
 </div>
 
 <div class="color-picker">
   <div class="color-letter">G</div>
-  <input type="text" class="color-number">
-  <input type="range" class="color-slider" maxlength="3">
+  {{input type="text" class="color-number" maxlength="3" value=focusColor.green}}
+  {{input type="range" class="color-slider" min="0" max="255" step="1" value=focusColor.green}}
 </div>
 
 <div class="color-picker">
   <div class="color-letter">B</div>
-  <input type="text" class="color-number">
-  <input type="range" class="color-slider" maxlength="3">
+  {{input type="text" class="color-number" maxlength="3" value=focusColor.blue}}
+  {{input type="range" class="color-slider" min="0" max="255" step="1" value=focusColor.blue}}
 </div>
 {{outlet}}
